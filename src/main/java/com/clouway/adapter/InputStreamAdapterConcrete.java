@@ -13,13 +13,9 @@ public class InputStreamAdapterConcrete implements InputStreamAdapter {
         this.input = input;
     }
 
-    public int read(byte[] buf, int offset, int length) {
+    public int read(byte[] buf, int offset, int length) throws IOException {
         int readBytes = -1;
-        try {
-            readBytes = input.read(buf, offset, length);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        readBytes = input.read(buf, offset, length);
         return readBytes;
     }
 }
