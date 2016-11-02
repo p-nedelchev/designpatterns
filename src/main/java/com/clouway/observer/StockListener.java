@@ -6,21 +6,26 @@ import java.util.List;
 /**
  * @author Petar Nedelchev <peter.krasimirov@gmail.com>
  */
-public class DeliveryObserver implements Observer {
+public class StockListener implements Observer {
     private List<Product> currentProducts;
 
-    public DeliveryObserver() {
+    public StockListener() {
         this.currentProducts = new LinkedList<Product>();
     }
 
+
     @Override
-    public void update(Product product, int actionId) {
-        if(actionId == 0) {
-            currentProducts.add(product);
-        }
+    public void onProductSell(Product product) {
+
     }
 
+    @Override
+    public void onProductStock(Product product) {
+
+    }
+
+    @Override
     public List<Product> getCurrentProducts() {
-        return currentProducts;
+        return null;
     }
 }
